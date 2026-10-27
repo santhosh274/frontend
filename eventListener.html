@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>a=5, b=7 <br><span id="result">0</span></h2>
+    <button id="addBtn" onclick="add()">Addition</button>
+    <button id="subBtn" onclick="sub()">Subtraction</button>
+    <button id="multBtn" onclick="multiply()">Multiply</button>
+    <button id="divBtn" onclick="divide()">Divide</button>
+    <button id="resetBtn" onclick="reset()">Reset</button>
+</body>
+<script>
+    // let count = 0
+    // function increase(){
+    //     count++
+    //     document.getElementById("count").innerHTML = count
+    // }
+    // function decrease(){
+    //     count--
+    //     document.getElementById("count").innerText = count
+    // }
+    // function reset(){
+    //     count=0
+    //     document.getElementById("count").innerText = count
+    // }
+
+    let a =5
+    let b =7
+    
+    // let addBtn = document.getElementById("addBtn")
+    // let subBtn = document.getElementById("subBtn")
+    // let multBtn = document.getElementById("multBtn")
+    // let divBtn = document.getElementById("divBtn")
+    // let resetBtn = document.getElementById("resetBtn")
+    
+    function reset(){
+        document.getElementById("result").innerHTML = "0"
+        alert("Reset Successful")
+    }
+
+    addBtn.addEventListener("click",function(){
+        document.getElementById("result").innerHTML = "a+b = " + (a + b)
+    })
+
+    subBtn.addEventListener("click",function(){
+        document.getElementById("result").innerHTML = "a-b = " + (a - b)
+    })
+
+    multBtn.addEventListener("click",function(){
+        document.getElementById("result").innerHTML = "a*b = " + (a * b)
+    })
+    
+    divBtn.addEventListener("click",function(){
+        document.getElementById("result").text = "<i>a/b = ${a / b}</i>";
+        document.getElementById("result").innerHTML = "<i>a/b = ${a / b}</i>";
+    })
+
+    resetBtn.addEventListener("click",reset)
+
+</script>
+</html>
