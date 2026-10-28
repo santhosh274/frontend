@@ -1,105 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santhosh Kumarr</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santhosh Kumarr · Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-        background-color: #fcfffd;
-        font-family: Arial, sans-serif;
-        margin: 20px;
+      background-color: #f0f4fa;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #1a2b3c;
+    }
+
+    body > * {
+      max-width: 1500px;
+      width: 100%;
     }
 
     .header-container {
-        background-color: #f7fafc;
-        border: 2px solid #0b0080;
-        border-radius: 12px;
-        padding: 24px 30px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      background-color: #ffffff;
+      border: 1px solid #cfdae9;
+      border-top: 8px solid #2563eb;
+      padding: 40px 40px 36px;
+      margin-bottom: 50px;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.08);
     }
 
     header {
-        display: flex;  
-        justify-content: space-between;
-        align-items: center;
-        color: #0b0080;
-        font-style: italic;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 30px;
     }
+
     .header-content {
-        max-width: 70%;
+      flex: 1 1 55%;
+      min-width: 250px;
     }
-    .profile-pic {
-        border-radius: 50%;
-        margin: 0;
+
+    .header-content h2 {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: #2563eb;
+      margin-bottom: 14px;
     }
-    .subhead {
-        font-family: 'Times New Roman', Times, serif;
-        color: #000000;
-        margin-top: 5px;
-        font-style: italic;
-        font-size: 30px;
+
+    .intro {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #1e3a8a;
+      margin-bottom: 2px;
+      font-style: italic;
     }
-    #item {
-        color: #000000;
-        font-style: italic;
+
+    #name {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-weight: 700;
+      padding-left: 4px;
+      font-size: 2.2rem;
+      color: #0b1e2e;
+      letter-spacing: -0.01em;
+      display: inline-block;
+    }
+
+    #role {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2563eb;
+      margin-top: 6px;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
     }
 
     .header-desc {
-        background-color: #ffffff;
-        border: 1px solid #cbd5e1;
-        border-radius: 6px;
-        padding: 12px 16px;
-        color: #333333;
-        font-style: normal;
-        margin-top: 15px;
+      background-color: #eef4ff;
+      border: 1px solid #bdd0f0;
+      padding: 18px 22px;
+      color: #1e2f4a;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-style: normal;
+      font-size: 0.94rem;
+      line-height: 1.75;
+      margin-top: 4px;
     }
-</style>
+
+    .profile-pic {
+      border-radius: 0;
+      object-fit: cover;
+      width: 170px;
+      height: 170px;
+      border: 5px solid #d0def0;
+      box-shadow: 0 4px 8px rgba(37, 99, 235, 0.1);
+      flex-shrink: 0;
+    }
+
+    .subhead {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #0b1e2e;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 46px;
+      margin-bottom: 14px;
+      font-style: normal;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #2563eb;
+      line-height: 1.3;
+    }
+
+    h2.subhead:first-of-type {
+      margin-top: 0;
+    }
+
+    ul {
+      list-style: none;
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    #skills {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    li#item {
+      color: #1a2b3c;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 0.96rem;
+      font-style: normal;
+      line-height: 1.6;
+      padding: 10px 14px 10px 18px;
+      font-weight: 400;
+      background: #ffffff;
+      border: 1px solid #d6e2f5;
+      border-left: 4px solid #2563eb;
+      box-shadow: 0 1px 3px rgba(37, 99, 235, 0.06);
+    }
+
+    #skills li#item {
+      border-left: none;
+      border: 1px solid #2563eb;
+      background: #eff6ff;
+      color: #1e3a8a;
+      font-weight: 600;
+      padding: 8px 16px;
+      font-size: 0.92rem;
+    }
+
+    li#item strong,
+    li#item b {
+      color: #0b1e2e;
+      font-weight: 700;
+    }
+
+    #email,
+    #github,
+    #linkedin,
+    #resume {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #bdd0f0;
+      border-radius: 0;
+      padding: 12px 0 12px 0;
+      margin-bottom: 0;
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 0.96rem;
+      color: #1a2b3c;
+      font-style: normal;
+      box-shadow: none;
+    }
+
+    #resume {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    #email a,
+    #github a,
+    #linkedin a,
+    #resume a {
+      color: #1d4ed8;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid #93b4f0;
+    }
+
+    body > p:last-child {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 30px 16px;
+      }
+
+      .header-container {
+        padding: 28px 22px 24px;
+        border-top-width: 6px;
+      }
+
+      header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .profile-pic {
+        width: 130px;
+        height: 130px;
+        border-width: 4px;
+      }
+
+      #name {
+        font-size: 1.8rem;
+      }
+
+      #role {
+        font-size: 0.92rem;
+        margin-bottom: 16px;
+      }
+
+      .subhead {
+        font-size: 1rem;
+        margin-top: 36px;
+      }
+
+      ul {
+        gap: 10px;
+      }
+
+      li#item {
+        font-size: 0.9rem;
+        padding: 8px 12px 8px 14px;
+      }
+
+      #skills li#item {
+        padding: 6px 12px;
+        font-size: 0.86rem;
+      }
+
+      .header-desc {
+        padding: 15px 16px;
+        font-size: 0.88rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .profile-pic {
+        width: 100px;
+        height: 100px;
+      }
+
+      #name {
+        font-size: 1.5rem;
+      }
+
+      .intro {
+        font-size: 0.95rem;
+      }
+
+      #role {
+        font-size: 0.85rem;
+        margin-bottom: 14px;
+      }
+
+      .subhead {
+        font-size: 0.9rem;
+        margin-top: 30px;
+      }
+
+      .header-container {
+        padding: 20px 16px 18px;
+      }
+
+      .header-desc {
+        padding: 12px 14px;
+        font-size: 0.85rem;
+      }
+
+      li#item {
+        font-size: 0.85rem;
+        padding: 6px 10px 6px 12px;
+      }
+
+      #skills li#item {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="header-container">
-        <header>
-            <div class="header-content">
-                <h1>Welcome to my Portfolio</h1>
-                <h3 class="subhead">Hi I'm <i>Santhosh Kumarr</i>, a passionate Cybersecurity Engineer & Web Developer</h3>
-                <p class="header-desc">
-                    Welcome to my personal space! I specialize in building secure web applications and developing cybersecurity solutions to protect digital assets. Explore my projects and experience below.
-                </p>
-            </div>
-            <img class="profile-pic" src="image.jpg" alt="profile picture" width="200" height="200">
-        </header>
-    </div>
+  <div class="header-container">
+    <header>
+      <div class="header-content">
+        <h2>Welcome to my Portfolio</h2>
+        <h3 class="intro">Hi I'm <span id="name"></span></h3>
+        <p id="role"></p>
+        <p class="header-desc">
+          Welcome to my personal space! I specialize in building secure web applications and developing cybersecurity solutions to protect digital assets. Explore my projects and experience below.
+        </p>
+      </div>
+      <img class="profile-pic" src="image.jpg" alt="profile picture" width="200" height="200">
+    </header>
+  </div>
 
-    <h2 class="subhead">List of my skills:</h2>
-    <ul class="list">
-        <li id="item">HTML</li>
-        <li id="item">CSS</li>
-        <li id="item">JavaScript</li>
-        <li id="item">Python</li>
-        <li id="item">Cybersecurity</li>
-    </ul>
-    <h2 class="subhead">Experience</h2>
-    <ul>
-        <li id="item">Freelance Web Developer (2025 - Present)</li>
-        <li id="item">Development Lead - Acutix Soft LLP (2026 - 2026)</li>
-        <li id="item">Cybersecurity Intern at VIPS.tech (2026 - 2026)</li>
-    </ul>
-    <h2 class="subhead">Projects</h2>
-    <ul>
-        <li id="item">Ransomware Detector - Implemented a secure detection system for early stage ransomware detection </li>
-        <li id="item">Gym Management System - Developed a comprehensive gym management solution including user management and scheduling features</li>
-        <li id="item">Cybersecurity Tools - Created a suite of tools for cybersecurity professionals including Network Scanners and Vulnerability Assessment Tools</li>
-    </ul>
-    <h2 class="subhead">Certificates</h2>
-    <ul>
-        <li id="item">SQLi Attacks - EC Council</li>
-        <li id="item">Ethical Hacker - Cisco</li>
-        <li id="item">Introduction to Cybersecurity - Cisco</li>
-    </ul>
-    <h2 class="subhead">Contact</h2>
-    <p>Email: <a href="mailto:santhoshkumarr@example.com">santhoshkumarr@example.com</a></p>
-    <p>Github: <a href="https://github.com/santhosh274">Github.com</a></p>
-    <p>Linkedin: <a href="https://www.linkedin.com/in/santhosh-kumarr-a-ace277">Linkedin.com</a></p>
-    <p>Download my <a href="https://drive.google.com/file/d/1-W-uMqrgul34lSKWpVsE6kKVTa5coQad/view">Resume</a> here</p>
+  <h2 class="subhead">List of my skills:</h2>
+  <ul id="skills"></ul>
+
+  <h2 class="subhead">Experience</h2>
+  <ul id="experience"></ul>
+
+  <h2 class="subhead">Projects</h2>
+  <ul id="projects"></ul>
+
+  <h2 class="subhead">Certificates</h2>
+  <ul id="certificate"></ul>
+
+  <h2 class="subhead">Contact</h2>
+  <p id="email">Email: </p>
+  <p id="github"></p>
+  <p id="linkedin"></p>
+  <p id="resume"></p>
+
+  <script>
+    const userData = {
+      name: "Santhosh Kumarr",
+      role: "Cybersecurity Engineer & Web Developer",
+      email: "santhoshkumarr.a7@gmail.com",
+      githubUrl: "https://github.com/santhosh274",
+      linkedinUrl: "https://www.linkedin.com/in/santhosh-kumarr-a-ace277",
+      resumeUrl: "https://drive.google.com/file/d/1-W-uMqrgul34lSKWpVsE6kKVTa5coQad/view",
+      skills: ["HTML", "CSS", "JavaScript", "Python", "Cybersecurity"],
+      experience: [
+        { position: "Freelance Web Developer", duration: "2025 - Present" },
+        { position: "Development Lead - Acutix Soft LLP", duration: "2026 - 2026" },
+        { position: "Cybersecurity Intern at VIPS.tech", duration: "2026 - 2026" }
+      ],
+      projects: [
+        { title: "Ransomware Detector", description: "Implemented a secure detection system for early stage ransomware detection" },
+        { title: "Gym Management System", description: "Developed a comprehensive gym management solution including user management and scheduling features" },
+        { title: "Cybersecurity Tools", description: "Created a suite of tools for cybersecurity professionals including Network Scanners and Vulnerability Assessment Tools" }
+      ],
+      certificates: [
+        { title: "SQLi Attacks", issuer: "EC Council" },
+        { title: "Ethical Hacker", issuer: "Cisco" },
+        { title: "Introduction to Cybersecurity", issuer: "Cisco" }
+      ]
+    }
+
+    const nameElem = document.getElementById('name')
+    const roleElem = document.getElementById('role')
+    const skillsListElem = document.getElementById('skills')
+    const experienceListElem = document.getElementById('experience')
+    const projectsListElem = document.getElementById('projects')
+    const certificateListElem = document.getElementById('certificate')
+    const emailLink = document.getElementById('email')
+    const githubLink = document.getElementById('github')
+    const linkedinLink = document.getElementById('linkedin')
+    const resumeElem = document.getElementById('resume')
+
+    nameElem.innerText = userData.name
+    roleElem.innerText = userData.role
+    skillsListElem.innerHTML = userData.skills.map(skill => `<li id="item">${skill}</li>`).join('')
+    experienceListElem.innerHTML = userData.experience.map(exp => `<li id="item"><b>${exp.position}</b> (${exp.duration})</li>`).join('')
+    projectsListElem.innerHTML = userData.projects.map(proj => `<li id="item"><strong>${proj.title}</strong> - ${proj.description}</li>`).join('')
+    certificateListElem.innerHTML = userData.certificates.map(cert => `<li id="item">${cert.title} - ${cert.issuer}</li>`).join('')
+    emailLink.innerHTML = `Email : <a href="mailto:${userData.email}">${userData.email}</a>`
+    githubLink.innerHTML = `Github : <a href="${userData.githubUrl}">${userData.githubUrl}</a>`
+    linkedinLink.innerHTML = `Linkedin : <a href="${userData.linkedinUrl}">${userData.linkedinUrl}</a>`
+    resumeElem.innerHTML = `Download my <a href="${userData.resumeUrl}">Resume</a> here`
+  </script>
 </body>
 </html>
